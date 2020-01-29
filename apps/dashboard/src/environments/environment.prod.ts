@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  configFileName: '/assets/config/app.config.json'
 };

@@ -153,6 +153,40 @@
         }
       },
       "schematics": {}
+    },
+    "login": {
+      "projectType": "library",
+      "root": "libs/login",
+      "sourceRoot": "libs/login/src",
+      "prefix": "nx-ngrx-seed",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/login/tsconfig.lib.json",
+            "project": "libs/login/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/login/tsconfig.lib.json",
+              "libs/login/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/login/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/login/jest.config.js",
+            "tsConfig": "libs/login/tsconfig.spec.json",
+            "setupFile": "libs/login/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
     }
   },
   "cli": {

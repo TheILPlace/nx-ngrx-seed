@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-ngrx-seed/core": ["libs/core/src/index.ts"]
+      "@nx-ngrx-seed/core": ["libs/core/src/index.ts"],
+      "@nx-ngrx-seed/login": ["libs/login/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
