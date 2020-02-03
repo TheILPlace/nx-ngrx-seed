@@ -1,3 +1,4 @@
 {
-    "apiServerUrl": "http://localhost/api"
+    "apiServerUrl": "http://localhost/api",
+    "loginUrl": "/loginUser"
 }
