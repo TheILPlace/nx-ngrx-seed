@@ -56,6 +56,10 @@
         "allow": [],
         "depConstraints": [
           {
+            "sourceTag": "scope:dashboard",
+            "onlyDependOnLibsWithTags": ["shared:core", "shared:login", "shared:wizard"]
+          },
+          {
             "sourceTag": "*",
             "onlyDependOnLibsWithTags": ["*"]
           }

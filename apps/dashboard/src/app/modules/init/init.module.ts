@@ -1,13 +1,13 @@
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ConfigService, configLoader, CoreModule, CONFIG_FILENAME_TOKEN } from '@nx-ngrx-seed/core';
+import { ConfigService, configLoader, CoreModule } from '@nx-ngrx-seed/core';
 import { Configuration } from '../../interfaces/configuration';
 import { LoginModule,  mapLoginConfiguration } from '@nx-ngrx-seed/login';
 import { environment } from '../../../environments/environment';
 
 
-export function globalConfigLoader(configService: ConfigService<Configuration>, configFileName: string) {
-  const promise = configLoader(configService, configFileName).then(() => {
+export function globalConfigLoader(configService: ConfigService<Configuration>) {
+  const promise = configLoader(configService, environment.configFileName).then(() => {
     // mapping
     mapLoginConfiguration(configService.configuration);
   });
@@ -20,11 +20,11 @@ export function globalConfigLoader(configService: ConfigService<Configuration>, 
     CommonModule, LoginModule, CoreModule
   ],
   providers: [
-    { provide: CONFIG_FILENAME_TOKEN, useValue: environment.configFileName },
+    
     {
       provide: APP_INITIALIZER,
       useFactory: globalConfigLoader,
-      deps: [ConfigService, CONFIG_FILENAME_TOKEN],
+      deps: [ConfigService],
       multi: true
     }
   ],

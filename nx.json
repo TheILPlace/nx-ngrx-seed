@@ -12,13 +12,16 @@
       "tags": []
     },
     "dashboard": {
-      "tags": []
+      "tags": ["scope:dashboard"]
     },
     "core": {
-      "tags": []
+      "tags": ["scope:core"]
     },
     "login": {
-      "tags": []
+      "tags": ["shared:login"]
+    },
+    "wizard": {
+      "tags": ["shared:wizard"]
     }
   }
 }

@@ -17,7 +17,8 @@
     "baseUrl": ".",
     "paths": {
       "@nx-ngrx-seed/core": ["libs/core/src/index.ts"],
-      "@nx-ngrx-seed/login": ["libs/login/src/index.ts"]
+      "@nx-ngrx-seed/login": ["libs/login/src/index.ts"],
+      "@nx-ngrx-seed/wizard": ["libs/wizard/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
