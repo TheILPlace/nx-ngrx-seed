@@ -15,7 +15,7 @@
       "tags": ["scope:dashboard"]
     },
     "core": {
-      "tags": ["scope:core"]
+      "tags": ["shared:core"] 
     },
     "login": {
       "tags": ["shared:login"]

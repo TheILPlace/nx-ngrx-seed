@@ -3,13 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { InitModule } from './modules/init/init.module';
-import { WizardModule} from '@nx-ngrx-seed/wizard'
+import { AppRoutingModule } from './app-routing.module';
 
 
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, InitModule, WizardModule],
+  imports: [BrowserModule, InitModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

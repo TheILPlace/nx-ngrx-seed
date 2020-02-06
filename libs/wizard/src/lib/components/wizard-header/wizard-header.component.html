@@ -1,0 +1,12 @@
+<div *ngIf="wizardConfig$ | async as wizardConfig">
+
+<header>
+ {{wizardConfig.wizardName}}    
+</header>
+
+
+<ul *ngFor="let step of wizardConfig.wizardSteps">
+    {{step.stepNumber}} - {{step.title}}  {{wizardConfig.currentStep === step.stepNo ? 'V': ''}}
+    </ul>
+
+</div>
