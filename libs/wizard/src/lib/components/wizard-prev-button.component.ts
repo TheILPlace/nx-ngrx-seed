@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'nx-ngrx-seed-wizard-prev-button',
   template: `
-      <button (click)="prev()" [disabled]="(canNotNavigateToPrevStep$ | async)">PREV</button>
+      <button  class="btn btn-error"  (click)="prev()" [disabled]="(canNotNavigateToPrevStep$ | async)">PREV</button>
 
   `,
   styles: []

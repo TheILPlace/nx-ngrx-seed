@@ -33,7 +33,8 @@ export class ElementPropertiesComponent extends BaseWizardStepComponent implemen
       units: ['', Validators.required]
     })
 
-    
+    this.registerEvents();
+
 
   }
 

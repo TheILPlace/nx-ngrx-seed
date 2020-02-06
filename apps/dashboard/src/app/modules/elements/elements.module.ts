@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NewElementWizardComponent } from './pages/new-element-wizard/new-element-wizard.component';
-import { NewElementService } from './services/new-element-service';
 import { ElementsRoutingModule } from './elements-routing.module';
 import { ElementsListPageComponent } from './pages/elements-list-page/elements-list-page.component';
 import { ElementNameComponent } from './pages/new-element-wizard/components/element-name.component';
@@ -17,6 +16,6 @@ import { WizardModule} from '@nx-ngrx-seed/wizard'
   imports: [
     CommonModule, ElementsRoutingModule, ReactiveFormsModule, WizardModule
   ],
-  providers: [NewElementService]
+  providers: []
 })
 export class ElementsModule { }

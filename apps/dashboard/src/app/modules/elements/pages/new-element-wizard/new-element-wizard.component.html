@@ -2,12 +2,13 @@
 
 <nx-ngrx-seed-wizard-header></nx-ngrx-seed-wizard-header>
 
+<div class="form-wrapper">
+   <router-outlet></router-outlet>
 
-<router-outlet></router-outlet>
 
+   <div>
+      <nx-ngrx-seed-wizard-next-button></nx-ngrx-seed-wizard-next-button>
 
-<Footer>
-   <nx-ngrx-seed-wizard-next-button></nx-ngrx-seed-wizard-next-button>
-   <BR>
-   <nx-ngrx-seed-wizard-prev-button></nx-ngrx-seed-wizard-prev-button>
-</Footer>
+      <nx-ngrx-seed-wizard-prev-button></nx-ngrx-seed-wizard-prev-button>
+   </div>
+</div>

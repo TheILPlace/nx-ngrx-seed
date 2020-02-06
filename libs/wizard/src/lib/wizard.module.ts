@@ -5,7 +5,6 @@ import { BaseWizardStepComponent } from './components/base-wizard-step.component
 import { WizardHeaderComponent } from './components/wizard-header/wizard-header.component';
 import { WizardNextButtonComponent } from './components/wizard-next-button.component';
 import { WizardPrevButtonComponent } from './components/wizard-prev-button.component';
-
 @NgModule({
   declarations: [BaseWizardStepComponent, WizardHeaderComponent, WizardNextButtonComponent, WizardPrevButtonComponent],
   imports: [CommonModule, RouterModule],

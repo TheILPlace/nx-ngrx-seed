@@ -1,4 +1,4 @@
-import { WizardConfig } from '@nx-ngrx-seed/wizard';
+import { WizardConfig, WizardStepGuard } from '@nx-ngrx-seed/wizard';
 import { Routes } from '@angular/router';
 import { ElementNameComponent } from './components/element-name.component';
 import { ElementPropertiesComponent } from './components/element-properties.component';
@@ -17,7 +17,7 @@ export const NEW_ELEMENT_INITIAL_STATE: WizardConfig = {
             isLastStep: false,
             path: 'name',
             component: ElementNameComponent,
-            guards: [],
+            guards: [WizardStepGuard],
             resolvers: [],
             stepData: null
 
@@ -31,7 +31,7 @@ export const NEW_ELEMENT_INITIAL_STATE: WizardConfig = {
             isLastStep: false,
             path: 'properties',
             component: ElementPropertiesComponent,
-            guards: [],
+            guards: [WizardStepGuard],
             resolvers: [],
             stepData: null
 
@@ -45,7 +45,7 @@ export const NEW_ELEMENT_INITIAL_STATE: WizardConfig = {
             isLastStep: true,
             path: 'data-source',
             component: ElementDataSourceComponent,
-            guards: [],
+            guards: [WizardStepGuard],
             resolvers: [],
             stepData: null
 
@@ -55,7 +55,14 @@ export const NEW_ELEMENT_INITIAL_STATE: WizardConfig = {
 }
 
 export function getWizardRouting(): Routes {
-    return NEW_ELEMENT_INITIAL_STATE.wizardSteps.map(ws => {
-        return {path: ws.path, component: ws.component, canActivate: ws.guards, resolver: ws.resolvers, data: {stepNumber: ws.stepNo}} 
+    const routes =  NEW_ELEMENT_INITIAL_STATE.wizardSteps.map(ws => {
+        return {
+            path: ws.path, component: ws.component, canActivate: ws.guards, resolver: ws.resolvers, data: {stepNumber: ws.stepNo}
+        } 
     }) as Routes
+
+    routes.push({path:'**', redirectTo: NEW_ELEMENT_INITIAL_STATE.wizardSteps[0].path})
+
+return routes;
+
 }

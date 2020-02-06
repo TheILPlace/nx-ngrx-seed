@@ -5,8 +5,19 @@
 </header>
 
 
-<ul *ngFor="let step of wizardConfig.wizardSteps">
-    {{step.stepNumber}} - {{step.title}}  {{wizardConfig.currentStep === step.stepNo ? 'V': ''}}
-    </ul>
+<!-- <ul *ngFor="let step of wizardConfig.wizardSteps">
+     {{step.stepNo}} - {{step.title}}  {{wizardConfig.currentStep === step.stepNo ? 'V': ''}}
+   </ul>
+-->
+
+
+<ul class="step">
+ 
+ <li  *ngFor="let step of wizardConfig.wizardSteps" class="step-item" [ngClass]="{'active': wizardConfig.currentStep === step.stepNo }">
+     <a href="#" class="tooltip" [attr.data-tooltip]="step.title">Step {{step.stepNo}}</a>
+   </li>
+   
+   
+</ul>
 
 </div>

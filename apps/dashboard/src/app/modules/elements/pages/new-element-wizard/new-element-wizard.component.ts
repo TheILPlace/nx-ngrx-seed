@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NewElementService } from '../../services/new-element-service';
 import { WizardService, WizardStep } from '@nx-ngrx-seed/wizard';
 import { NEW_ELEMENT_INITIAL_STATE } from './new-element-wizard-config';
 

@@ -60,6 +60,10 @@
             "onlyDependOnLibsWithTags": ["shared:core", "shared:login", "shared:wizard"]
           },
           {
+            "sourceTag": "shared:wizard",
+            "onlyDependOnLibsWithTags": ["shared:core"]
+          },
+          {
             "sourceTag": "*",
             "onlyDependOnLibsWithTags": ["*"]
           }

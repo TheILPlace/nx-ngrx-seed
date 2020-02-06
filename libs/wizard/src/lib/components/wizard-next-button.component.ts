@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'nx-ngrx-seed-wizard-next-button',
   template: `
-    <button (click)="next()" [disabled]="(currentStepNotValid$ | async)">NEXT</button>
+    <button  class="btn btn-success"  (click)="next()" [disabled]="(currentStepNotValid$ | async)">NEXT</button>
 <br>
 
   `,

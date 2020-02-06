@@ -28,6 +28,7 @@ export class ElementNameComponent extends BaseWizardStepComponent implements OnI
     this.myForm = this.fb.group({
       name: ['', Validators.required]
     })
+    this.registerEvents();
 
    
 

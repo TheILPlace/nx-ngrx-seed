@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, AfterViewInit, AfterContentChecked } from '@angular/core';
+import { Component, OnInit, OnDestroy,  AfterViewChecked } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { WizardStep } from '../models/wizard-step';
 import { cloneDeep } from 'lodash';
@@ -11,7 +11,7 @@ import { WizardService } from '../services/wizard.service';
   template: ``,
   styles: []
 })
-export class BaseWizardStepComponent implements OnInit, OnDestroy, AfterContentChecked {
+export class BaseWizardStepComponent implements OnInit, OnDestroy {
   currentWizardStep: WizardStep;
   sub: Subscription;
   statusSub: Subscription;
@@ -23,10 +23,12 @@ export class BaseWizardStepComponent implements OnInit, OnDestroy, AfterContentC
   constructor(wizardService: WizardService, fb: FormBuilder) {
     this._wizardService = wizardService;
     this._fb = fb;
+    //this.myForm = this._fb.group({});
   }
 
   ngOnInit() {
     this.initBase();
+    
     this.init();
   }
 
@@ -48,11 +50,11 @@ export class BaseWizardStepComponent implements OnInit, OnDestroy, AfterContentC
 
     })
 
-
+    //this.init2();
 
   }
 
-  ngAfterContentChecked() {
+  registerEvents() {
 
     this.statusSub = this.myForm.statusChanges.subscribe(s => {
       if (s !== this.currentStatus) {
@@ -61,8 +63,9 @@ export class BaseWizardStepComponent implements OnInit, OnDestroy, AfterContentC
       }
     })
 
-    if (this.currentWizardStep.stepData)
-    this.myForm.patchValue(this.currentWizardStep.stepData);
+    if (this.currentWizardStep.stepData) {
+      this.myForm.patchValue(this.currentWizardStep.stepData);
+    }
 
 
 
