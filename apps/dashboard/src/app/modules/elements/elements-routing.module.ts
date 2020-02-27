@@ -10,7 +10,14 @@ const routes: Routes = [
     {
         path: 'new-element', component: NewElementWizardComponent, children: [
             ...getWizardRouting()
-        ]
+        ],
+        
+    },
+    {
+        path: 'new-element2', component: NewElementWizardComponent, children: [
+            ...getWizardRouting()
+        ],
+        
     },
     { path: '**', redirectTo: 'list' }
 

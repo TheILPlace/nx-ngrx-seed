@@ -30,7 +30,7 @@ export class ElementDataSourceComponent extends BaseWizardStepComponent implemen
     })
     this.registerEvents();
 
-    this.registerEvents();
+    //this.registerEvents();
 
   }
 

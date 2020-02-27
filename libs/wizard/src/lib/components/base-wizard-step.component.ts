@@ -34,6 +34,8 @@ export class BaseWizardStepComponent implements OnInit, OnDestroy {
 
   init() { };
 
+  showError() {}
+
   initBase() {
 
     this._wizardService.getCurrentWizardStep().pipe(take(1))
@@ -46,6 +48,8 @@ export class BaseWizardStepComponent implements OnInit, OnDestroy {
     this.sub = this._wizardService.nextStep$.subscribe(() => {
       if (this.myForm.valid) {
         this._wizardService.updateWizardStep(this.currentWizardStep, this.myForm.value, true);
+      } else {
+        this.showError();
       }
 
     })

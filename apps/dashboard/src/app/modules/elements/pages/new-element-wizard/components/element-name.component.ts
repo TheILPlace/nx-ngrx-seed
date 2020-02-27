@@ -34,4 +34,9 @@ export class ElementNameComponent extends BaseWizardStepComponent implements OnI
 
   }
 
+  showError() {
+    const msg = "form not valid";
+    alert(msg);
+  }
+
 }
